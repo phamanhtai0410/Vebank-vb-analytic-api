@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  vb-analytics-api:
+    image: vb-analytics-api
+    build: .
+    restart: always
+    volumes:
+      - ./:/webapps
+    ports:
+      - 9999:5005
+    command: supervisord -n -c /etc/supervisor.d/service.conf

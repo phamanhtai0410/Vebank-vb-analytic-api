@@ -1,0 +1,11 @@
+.idea
+*.pyc
+code/config
+test
+.env
+.vscode
+venv
+supervisord.pid
+*.model
+__pycache__
+lib
