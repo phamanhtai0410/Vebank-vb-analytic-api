@@ -27,7 +27,7 @@ class DefaultConfig(BaseConfig):
     BABEL_DEFAULT_LOCALE = 'en'
 
     # DB
-    DB_APP = os.getenv('DB_APP')
+    POOL_DEX_MONGO_URI = os.getenv('POOL_DEX_MONGO_URI')
 
     # Redis Cluster
     REDIS_CLUSTER = json.loads(os.getenv('REDIS_CLUSTER'))
@@ -52,6 +52,7 @@ class DefaultConfig(BaseConfig):
     VECHAIN_RPC = os.getenv('VECHAIN_RPC')
     KEYSTORE_PASSWORD = os.getenv('KEYSTORE_PASSWORD')
     CALLER = os.getenv('CALLER')
+    POOL_DEX_FACTORY_CONTRACT = os.getenv('POOL_DEX_FACTORY_CONTRACT')
 
     # RabitMQ
     RABBIT_HOST = os.getenv('RABBIT_HOST')
@@ -62,14 +63,6 @@ class DefaultConfig(BaseConfig):
 
     # Implementation environment
     ENV = os.getenv('ENV') or 'dev'
-
-    API_URL = os.getenv("API_URL")
-
-    # Bot Configurations
-    BOT_TYPE = os.getenv("BOT_TYPE") or BotType.CONSTANT_PRODUCT
-    PRICE_GAP = float(os.getenv("PRICE_GAP")) or 0.2
-    BOT_TIME_SLEEP = int(os.getenv("BOT_TIME_SLEEP")) or 15
-    BOT_DEVIATION = os.getenv("BOT_DEVIATION") or 0.01
 
 
 

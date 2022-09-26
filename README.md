@@ -21,6 +21,9 @@ The following assumes the use of `python@>=3.8`.
 
 `pip3 install -r requirements.txt`
 
+## Clone Library
+`git clone https://gitlab.rinznetwork.com/vebank/vb-lib.git lib `
+
 ## Running command
 
 ### Service: 
