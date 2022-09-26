@@ -58,9 +58,6 @@ build_stag:
     - curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/v1.38.0/skaffold-linux-amd64 && chmod +x skaffold &&  mv skaffold /usr/local/bin
   script:
     - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $CONTAINER_REPO_ASIA_STAG
-    - mkdir -p ./conf/keys/
-    - cp -f $FAUCET_STAG ./conf/keys/faucet_keystore.json
-    - cp -f $FAUCET_STAG ./conf/keys/faucet_keystore
     - |
       if [ "$CI_COMMIT_REF_NAME" == "stag" ]; then
         sed -i -e "s#\[IMAGE_NAME_WORKER\]#$IMAGE_NAME_WORKER#g" skaffold.yaml
