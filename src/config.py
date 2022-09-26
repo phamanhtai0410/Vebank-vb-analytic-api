@@ -53,6 +53,21 @@ class DefaultConfig(BaseConfig):
     KEYSTORE_PASSWORD = os.getenv('KEYSTORE_PASSWORD')
     CALLER = os.getenv('CALLER')
     POOL_DEX_FACTORY_CONTRACT = os.getenv('POOL_DEX_FACTORY_CONTRACT')
+    VEUSD_ADDRESS = os.getenv('VEUSD_ADDRESS')
+    VVET_ADDRESS = os.getenv('VVET_ADDRESS')
+    VB_ADDRESS = os.getenv('VB_ADDRESS')
+    VTHO_ADDRESS = os.getenv('VTHO_ADDRESS')
+    WHITELIST = [
+        os.getenv('VVET_ADDRESS'),  # VVET
+        os.getenv('VEUSD_ADDRESS'),  # VEUSD
+        os.getenv('VB_ADDRESS'),  # VB
+        os.getenv('VTHO_ADDRESS'),  # VTHO
+    ]
+    ADDRESS_ZERO = "0x0000000000000000000000000000000000000000"
+    BIG_DECIMAL_1E18 = 10 ** 18
+    BIG_DECIMAL_1E6 = 10 ** 6
+    BIG_DECIMAL_ONE = 1
+    BIG_DECIMAL_ZERO = 0
 
     # RabitMQ
     RABBIT_HOST = os.getenv('RABBIT_HOST')
