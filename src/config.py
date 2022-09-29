@@ -28,6 +28,7 @@ class DefaultConfig(BaseConfig):
 
     # DB
     POOL_DEX_MONGO_URI = os.getenv('POOL_DEX_MONGO_URI')
+    ANALYTIC_MONGO_URI = os.getenv('ANALYTIC_MONGO_URI')
 
     # Redis Cluster
     REDIS_CLUSTER = json.loads(os.getenv('REDIS_CLUSTER'))

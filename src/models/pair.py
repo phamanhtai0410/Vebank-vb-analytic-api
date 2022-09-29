@@ -34,10 +34,10 @@ class PoolHourDataModel(BaseMG):
     updated_by = fields.CharField(blank=True, default='')
 
     class Meta:
-        collection_name = 'hour_data'
+        collection_name = 'pairs_hour_data'
         final = True
         ignore_unknown_fields = True
-        connection_alias = DBName.POOL
+        connection_alias = DBName.ANALYTIC
 
 
 class PoolDayDataModel(BaseMG):
@@ -57,10 +57,10 @@ class PoolDayDataModel(BaseMG):
     updated_by = fields.CharField(blank=True, default='')
 
     class Meta:
-        collection_name = 'day_data'
+        collection_name = 'pairs_day_data'
         final = True
         ignore_unknown_fields = True
-        connection_alias = DBName.POOL
+        connection_alias = DBName.ANALYTIC
 
 
 class PoolWeekDataModel(BaseMG):
@@ -79,10 +79,10 @@ class PoolWeekDataModel(BaseMG):
     updated_by = fields.CharField(blank=True, default='')
 
     class Meta:
-        collection_name = 'week_data'
+        collection_name = 'pairs_week_data'
         final = True
         ignore_unknown_fields = True
-        connection_alias = DBName.POOL
+        connection_alias = DBName.ANALYTIC
 
 
 class PoolMonthDataModel(BaseMG):
@@ -101,10 +101,10 @@ class PoolMonthDataModel(BaseMG):
     updated_by = fields.CharField(blank=True, default='')
 
     class Meta:
-        collection_name = 'month_data'
+        collection_name = 'pairs_month_data'
         final = True
         ignore_unknown_fields = True
-        connection_alias = DBName.POOL
+        connection_alias = DBName.ANALYTIC
 
 
 class PoolSummaryModel(BaseMG):
@@ -121,10 +121,10 @@ class PoolSummaryModel(BaseMG):
     updated_by = fields.CharField(blank=True, default='')
 
     class Meta:
-        collection_name = 'summary_data'
+        collection_name = 'pairs_summary_data'
         final = True
         ignore_unknown_fields = True
-        connection_alias = DBName.POOL
+        connection_alias = DBName.ANALYTIC
 
 
 

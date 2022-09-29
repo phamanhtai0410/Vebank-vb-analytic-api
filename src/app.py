@@ -47,6 +47,7 @@ def configure_app(app, config=None):
 
 def configure_extensions(app):
     connect(DefaultConfig.POOL_DEX_MONGO_URI, connect=False, alias=DBName.POOL)
+    connect(DefaultConfig.ANALYTIC_MONGO_URI, connect=False, alias=DBName.ANALYTIC)
     # mdb_payment.init_app(app, uri=app.config['MONGO_URI_RINZ_PAYMENT'])
 
     # Sentry
