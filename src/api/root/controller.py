@@ -11,6 +11,9 @@ from lib.decorators import handle_res
 def debug():
     return {}
 
+
 @handle_res(login=False)
 def health_check(*args, **kwargs):
-    return {}
+    return {
+        "res": "Health check OK !"
+    }
