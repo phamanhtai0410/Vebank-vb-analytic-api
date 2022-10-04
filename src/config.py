@@ -3,7 +3,6 @@
 import os
 import json
 from dotenv import load_dotenv
-from src.constants import BotType
 load_dotenv()
 
 

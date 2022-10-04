@@ -12,6 +12,8 @@ variables:
 
   HELM_VALUE: ${CI_COMMIT_REF_NAME}
   HELM_VERSION: 3.0.0
+  KUBECTL_VERSION: v1.22.0
+  SKAFFOLD_VERSION: v1.38.0
   AWS_REGION: ap-southeast-1
   GITLAB_TOKEN: $GITLAB_RUNNER_TOKEN
   DOCKER_DRIVER: overlay
@@ -55,7 +57,7 @@ build_stag:
     - git submodule update --init --remote --recursive
     - pip install awscli==1.19.112
     - export VERIFY_CHECKSUM=false && curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 && chmod +x ./get_helm.sh && ./get_helm.sh
-    - curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/v1.38.0/skaffold-linux-amd64 && chmod +x skaffold &&  mv skaffold /usr/local/bin
+    - curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/$SKAFFOLD_VERSION/skaffold-linux-amd64 && chmod +x skaffold &&  mv skaffold /usr/local/bin
   script:
     - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $CONTAINER_REPO_ASIA_STAG
     - |
@@ -90,8 +92,8 @@ deploy_stag:
         sed -i -e "s#\[FULLREPO_ASIA\]#$FULLREPO_ASIA_STAG#g" stag.yaml
         sed -i -e "s#\[NAMESPACE\]#$NAMESPACE_STAG#g" stag.yaml
       fi
-    - curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl && chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
-    - curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/v1.38.0/skaffold-linux-amd64 && chmod +x skaffold &&  mv skaffold /usr/local/bin
+    - curl -LO https://storage.googleapis.com/kubernetes-release/release/$KUBECTL_VERSION/bin/linux/amd64/kubectl && chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
+    - curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/$SKAFFOLD_VERSION/skaffold-linux-amd64 && chmod +x skaffold &&  mv skaffold /usr/local/bin
    
     - /usr/local/bin/skaffold deploy -p profile-stag   -a build.json
   only:
