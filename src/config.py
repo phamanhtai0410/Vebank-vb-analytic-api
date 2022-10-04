@@ -3,7 +3,6 @@
 import os
 import json
 from dotenv import load_dotenv
-from src.constants import BotType
 load_dotenv()
 
 
@@ -27,7 +26,7 @@ class DefaultConfig(BaseConfig):
     BABEL_DEFAULT_LOCALE = 'en'
 
     # DB
-    POOL_DEX_MONGO_URI = os.getenv('POOL_DEX_MONGO_URI')
+    # POOL_DEX_MONGO_URI = os.getenv('POOL_DEX_MONGO_URI')
     ANALYTIC_MONGO_URI = os.getenv('ANALYTIC_MONGO_URI')
 
     # Redis Cluster
