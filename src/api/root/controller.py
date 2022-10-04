@@ -14,4 +14,6 @@ def debug():
 
 @handle_res(login=False)
 def health_check(*args, **kwargs):
-    return {}
+    return {
+        "res": "Health check OK !"
+    }
