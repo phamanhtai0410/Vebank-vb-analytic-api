@@ -26,7 +26,7 @@ class DefaultConfig(BaseConfig):
     BABEL_DEFAULT_LOCALE = 'en'
 
     # DB
-    # POOL_DEX_MONGO_URI = os.getenv('POOL_DEX_MONGO_URI')
+    POOL_DEX_MONGO_URI = os.getenv('POOL_DEX_MONGO_URI')
     ANALYTIC_MONGO_URI = os.getenv('ANALYTIC_MONGO_URI')
 
     # Redis Cluster
