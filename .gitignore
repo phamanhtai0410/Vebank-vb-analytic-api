@@ -9,3 +9,4 @@ supervisord.pid
 *.model
 __pycache__
 lib
+env

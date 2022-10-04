@@ -80,5 +80,15 @@ class DefaultConfig(BaseConfig):
     # Implementation environment
     ENV = os.getenv('ENV') or 'dev'
 
-
+    ASSET_VET = os.getenv('ASSET_VET').lower()
+    ASSET_VTHO = os.getenv('ASSET_VTHO').lower()
+    ASSET_VEUSD = os.getenv('ASSET_VEUSD').lower()
+    ASSET_VB = os.getenv('ASSET_VB').lower()
+    LIST_ASSETS = [ASSET_VET, ASSET_VEUSD, ASSET_VB, ASSET_VTHO]
+    ASSETS_NAME = {
+        ASSET_VET: "vet",
+        ASSET_VTHO: "vtho",
+        ASSET_VEUSD: "veusd",
+        ASSET_VB: "vb"
+    }
 
